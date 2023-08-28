@@ -44,8 +44,8 @@
 
         #typewriter-text {
             font-family: monospace;
-            color: white; /* Ensure text is visible on the background */
-            font-size: 3rem; /* Adjust the font size as needed */
+            color: white;
+            font-size: 3rem; 
         }
 
         .blink {
@@ -122,9 +122,9 @@
                 const textNode = document.createTextNode(textToType.charAt(currentIndex));
                 textElement.appendChild(textNode);
                 currentIndex++;
-                setTimeout(typeText, 100); // Adjust the typing speed here (100ms for example)
+                setTimeout(typeText, 100); 
             } else {
-                textElement.innerHTML += '<span class="blink">|</span>'; // Add blinking cursor
+                textElement.innerHTML += '<span class="blink">|</span>'; 
             }
         }
 

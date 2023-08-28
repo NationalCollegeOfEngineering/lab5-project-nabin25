@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Portfolio</title>
+    <title>About Me</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Voltaire&display=swap" rel="stylesheet">
@@ -39,8 +39,8 @@
         }
         #typewriter-text {
             font-family: monospace;
-            color: white; /* Ensure text is visible on the background */
-            font-size: 2rem; /* Adjust the font size as needed */
+            color: white; 
+            font-size: 2rem; 
         }
 
         .blink {
@@ -118,9 +118,9 @@
                     const textNode = document.createTextNode(textToType.charAt(currentIndex));
                     textElement.appendChild(textNode);
                     currentIndex++;
-                    setTimeout(typeText, 50); // Adjust the typing speed here (100ms for example)
+                    setTimeout(typeText, 50); 
                 } else {
-                    textElement.innerHTML += '<span class="blink">|</span>'; // Add blinking cursor
+                    textElement.innerHTML += '<span class="blink">|</span>'; 
                 }
             }
     
