@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Voltaire&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+      *{
+            font-family: 'Voltaire', sans-serif;
+        }
+        .navbar {
+            background-color: #395240;
+            height: 10vh;
+        }
+
+        .nav-image {
+            height: 80%;
+            width: 35px;
+            padding: 0 !important;
+        }
+
+        .portfolio-content {
+            padding: 0;
+            position: relative;
+        }
+
+        #home {
+            margin-top: 10vh;
+            background-color: #aaa;
+            background-image: url("images/cover-home.jpg");
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: multiply;
+            height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #typewriter-text {
+            font-family: monospace;
+            color: white; /* Ensure text is visible on the background */
+            font-size: 3rem; /* Adjust the font size as needed */
+        }
+
+        .blink {
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+  <nav class="navbar align-content-center navbar-dark fixed-top">
+    <div class="container-fluid">
+        <div>
+        <img src="images/hello.jpg" class="img-thumbnail rounded-circle nav-image" alt="Image">  
+      <a class="navbar-brand" href="index.html">Nabin</a>
+    </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Navigation</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="skills.html">Skills</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+<div class="container-fluid px-0 portfolio-content">
+    <section id="home">
+        <div id="typewriter-text"></div>
+    </section>
+</div>
+<div class="sticky-bottom fixed-bottom bg-light text-center py-2 copy">Copyright &copy; 2023</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const textElement = document.getElementById('typewriter-text');
+        const textToType = "Hello, I am Nabin Paudyal. Welcome to my portfolio website.";
+        let currentIndex = 0;
+
+        function typeText() {
+            if (currentIndex < textToType.length) {
+                const textNode = document.createTextNode(textToType.charAt(currentIndex));
+                textElement.appendChild(textNode);
+                currentIndex++;
+                setTimeout(typeText, 100); // Adjust the typing speed here (100ms for example)
+            } else {
+                textElement.innerHTML += '<span class="blink">|</span>'; // Add blinking cursor
+            }
+        }
+
+        typeText();
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous">
+</script>
+</body>
+</html>
